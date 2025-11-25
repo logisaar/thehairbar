@@ -55,7 +55,7 @@ const About = () => {
             About Us
           </h1>
           <p className="text-white/90">
-            Where beauty meets expertise
+            Where style meets precision
           </p>
         </div>
       </div>
@@ -69,14 +69,14 @@ const About = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Founded in 2019, The Hair Bar has become Changak's premier destination for
-              luxury hair care and styling. Our journey began with a simple vision: to create
-              a space where artistry meets relaxation, and every client leaves feeling
-              beautiful and confident.
+              men's grooming and professional styling. Our journey began with a simple vision: to create
+              a space where craftsmanship meets relaxation, and every client leaves feeling
+              sharp and confident.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              With a team of experienced stylists and a commitment to using only the finest
-              products, we've built a reputation for excellence in hair care. From everyday
-              cuts to special occasion styling, we treat every appointment as an opportunity
+              With a team of experienced barbers and a commitment to using only the finest
+              products, we've built a reputation for excellence in men's grooming. From everyday
+              cuts to premium styling and treatments, we treat every appointment as an opportunity
               to exceed expectations.
             </p>
           </CardContent>
@@ -102,14 +102,14 @@ const About = () => {
                   Meet the Founder
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The Hair Bar was founded with a vision to create a premium beauty destination
-                  where every woman feels valued, beautiful, and empowered. With years of experience
-                  in the beauty industry and a passion for excellence, our founder has built a
-                  sanctuary that combines luxury, expertise, and personalized care.
+                  The Hair Bar was founded by Tapan Kumar Nath with a vision to create a premium grooming destination
+                  where every man feels confident, sharp, and empowered. With years of experience
+                  in the grooming industry and a passion for excellence, our founder has built a
+                  gentleman's retreat that combines modern style, expert craftsmanship, and personalized service.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Our commitment to using premium products, maintaining the highest hygiene standards,
-                  and delivering exceptional service has made The Hair Bar a trusted name in beauty
+                  and delivering exceptional grooming has made The Hair Bar a trusted name in men's style
                   and wellness.
                 </p>
               </div>

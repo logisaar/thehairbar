@@ -28,28 +28,28 @@ const Home = () => {
   const whyChooseUs = [
     {
       icon: Crown,
-      title: "Women-Only Space",
-      description: "Your private sanctuary of beauty and elegance",
+      title: "Gentleman's Atmosphere",
+      description: "Your exclusive space for premium grooming",
     },
     {
       icon: Sparkles,
-      title: "Luxury Experience",
-      description: "Premium products & world-class service",
+      title: "Premium Experience",
+      description: "Top-tier products & exceptional service",
     },
     {
       icon: Award,
-      title: "Expert Stylists",
-      description: "Certified professionals trained internationally",
+      title: "Master Barbers",
+      description: "Skilled professionals with years of expertise",
     },
     {
       icon: Shield,
-      title: "Hygiene First",
-      description: "Sterilized tools, pristine environment",
+      title: "Hygiene Standards",
+      description: "Sterilized tools, immaculate environment",
     },
     {
       icon: Heart,
-      title: "Personalized Care",
-      description: "Customized treatments for your unique needs",
+      title: "Tailored Grooming",
+      description: "Customized styles for your unique look",
     },
   ];
 
@@ -135,22 +135,22 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: "Riya M.",
-      text: "The most luxurious salon experience I've ever had! The women-only environment made me feel so comfortable and pampered.",
+      name: "Arjun S.",
+      text: "Best grooming experience in town! The barbers are true professionals and the atmosphere is perfect for a gentleman's visit.",
       rating: 5,
-      service: "Bridal Makeup",
+      service: "Premium Haircut",
     },
     {
-      name: "Sakshi K.",
-      text: "Absolutely love The Hair Bar! The gold facial was divine and my skin has never looked better. True luxury!",
+      name: "Vikram P.",
+      text: "Absolutely impressed with The Hair Bar! Got the Schwarzkopf color treatment and my look has completely transformed. Highly recommend!",
       rating: 5,
-      service: "Gold Facial",
+      service: "Hair Coloring",
     },
     {
-      name: "Meera D.",
-      text: "Finally found my go-to salon! The staff is incredibly professional and the ambiance is pure elegance.",
+      name: "Rahul K.",
+      text: "Finally found my regular spot! The staff knows exactly what I want and the precision in their work is unmatched.",
       rating: 5,
-      service: "Hair Spa",
+      service: "Beard Styling",
     },
   ];
 
@@ -185,10 +185,10 @@ const Home = () => {
             <span className="luxury-text">The Hair Bar</span>
           </h1>
           <p className="text-2xl md:text-3xl text-accent mb-2 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            Luxury Redefined for the Modern Woman
+            Luxury Redefined for the Modern Man
           </p>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Where Every Woman Finds Her Crown
+            Where Every Man Finds His Crown
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
             <Button
@@ -218,13 +218,13 @@ const Home = () => {
       <section className="py-16 px-6 max-w-4xl mx-auto text-center">
         <div className="animate-fade-in">
           <h2 className="text-4xl font-bold mb-6 font-['Playfair_Display']">
-            Welcome to Your Personal <span className="luxury-text">Beauty Sanctuary</span>
+            Welcome to Your Ultimate <span className="luxury-text">Grooming Destination</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-4">
-            Step into an exclusive women-only space where luxury meets expertise. At The Hair Bar, we're building India's most loved women's beauty destination, inspired by the excellence of leading brands.
+            Step into a premium men's grooming space where style meets precision. At The Hair Bar, we're redefining men's grooming standards with expert barbers, modern techniques, and world-class products.
           </p>
           <p className="text-lg text-accent font-medium">
-            International Standards • Premium Products • Expert Care
+            Master Barbers • Premium Brands • Precision Styling
           </p>
         </div>
       </section>
@@ -454,7 +454,7 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-16 px-6 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 font-['Playfair_Display']">
-          What Our <span className="luxury-text">Queens</span> Say
+          What Our <span className="luxury-text">Customers</span> Say
         </h2>
         <p className="text-center text-muted-foreground mb-12">4.9/5.0 from 500+ Happy Clients</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
