@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
+import founderImage from "@/assets/Founder.jpg";
 
 const About = () => {
   const [formData, setFormData] = useState({
@@ -67,17 +68,52 @@ const About = () => {
               Our Story
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Founded in 2019, The Hair Bar has become Changak's premier destination for 
-              luxury hair care and styling. Our journey began with a simple vision: to create 
-              a space where artistry meets relaxation, and every client leaves feeling 
+              Founded in 2019, The Hair Bar has become Changak's premier destination for
+              luxury hair care and styling. Our journey began with a simple vision: to create
+              a space where artistry meets relaxation, and every client leaves feeling
               beautiful and confident.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              With a team of experienced stylists and a commitment to using only the finest 
-              products, we've built a reputation for excellence in hair care. From everyday 
-              cuts to special occasion styling, we treat every appointment as an opportunity 
+              With a team of experienced stylists and a commitment to using only the finest
+              products, we've built a reputation for excellence in hair care. From everyday
+              cuts to special occasion styling, we treat every appointment as an opportunity
               to exceed expectations.
             </p>
+          </CardContent>
+        </Card>
+
+        {/* Meet the Founder */}
+        <Card className="shadow-soft animate-slide-up overflow-hidden">
+          <CardContent className="p-0">
+            <div className="flex flex-col">
+              <div className="relative w-full h-80 sm:h-96 md:min-h-[500px] overflow-hidden">
+                <img
+                  src={founderImage}
+                  alt="Founder of The Hair Bar"
+                  className="w-full h-full object-cover object-center"
+                  style={{
+                    filter: 'brightness(1.05) contrast(1.1) saturate(1.15) sepia(0.05)',
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-foreground mb-3 font-['Playfair_Display']">
+                  Meet the Founder
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  The Hair Bar was founded with a vision to create a premium beauty destination
+                  where every woman feels valued, beautiful, and empowered. With years of experience
+                  in the beauty industry and a passion for excellence, our founder has built a
+                  sanctuary that combines luxury, expertise, and personalized care.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our commitment to using premium products, maintaining the highest hygiene standards,
+                  and delivering exceptional service has made The Hair Bar a trusted name in beauty
+                  and wellness.
+                </p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -116,7 +152,7 @@ const About = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4 font-['Playfair_Display']">
               Visit Us
             </h2>
-            
+
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
               <div>

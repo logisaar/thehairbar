@@ -57,64 +57,55 @@ const Home = () => {
     {
       category: "Hair Services",
       services: [
-        { name: "Luxury Hair Cut & Styling", price: "₹1,200", description: "Expert precision cuts with luxury styling" },
-        { name: "Premium Hair Coloring", price: "₹3,500", description: "Balayage, Highlights, Ombre techniques" },
-        { name: "Hair Spa & Deep Conditioning", price: "₹1,500", description: "Nourishing treatment for healthy hair" },
-        { name: "Keratin Treatment", price: "₹5,000", description: "Smoothening & shine restoration" },
+        { name: "Hair Cut & Styling", price: "₹150", description: "Buzz cut, Crew cut, Mullet, Fade, Quiff, Flat top" },
+        { name: "Premium Shampoo", price: "₹100", description: "Wella, L'Oreal, Raaga, GK brands" },
+        { name: "Schwarzkopf Colour", price: "₹599", description: "Premium professional coloring" },
+        { name: "L'Oreal X-Tenso Straightening", price: "₹1,499", description: "Professional smoothening system" },
       ],
     },
     {
-      category: "Bridal Services",
+      category: "Skin Care",
       services: [
-        { name: "Bridal Makeup Artistry", price: "₹15,000", description: "Flawless bridal look perfection" },
-        { name: "Pre-Bridal Packages", price: "₹25,000", description: "Complete transformation journey" },
-        { name: "Bridal Hair Styling", price: "₹8,000", description: "Elegant bridal hairstyles" },
-        { name: "Engagement Look", price: "₹10,000", description: "Stunning engagement makeup & styling" },
+        { name: "O3+ D-Tan", price: "₹799", description: "Premium tan removal treatment" },
+        { name: "Lotus Clean Up", price: "₹599", description: "Refreshing facial clean up" },
+        { name: "Raaga D-Tan", price: "₹499", description: "Effective tan removal" },
+        { name: "Lotus Scrub", price: "₹299", description: "Exfoliating facial scrub" },
       ],
     },
     {
-      category: "Skin & Glow",
+      category: "Facials",
       services: [
-        { name: "Gold Facial", price: "₹3,500", description: "24K gold radiance treatment" },
-        { name: "Diamond Facial", price: "₹4,500", description: "Ultimate luxury facial experience" },
-        { name: "Skin Brightening", price: "₹2,500", description: "Advanced brightening treatment" },
-        { name: "De-Tan & Clean-up", price: "₹1,200", description: "Instant glow and freshness" },
-      ],
-    },
-    {
-      category: "Beauty & Grooming",
-      services: [
-        { name: "Premium Manicure & Pedicure", price: "₹1,500", description: "Luxury hand & feet spa" },
-        { name: "Nail Art & Extensions", price: "₹2,000", description: "Creative nail designs" },
-        { name: "Threading & Waxing", price: "₹800", description: "Gentle hair removal services" },
-        { name: "Eyelash Extensions", price: "₹2,500", description: "Voluminous lash perfection" },
+        { name: "O3+ Facial", price: "₹2,999", description: "Luxury facial treatment" },
+        { name: "Lotus Gold Shine", price: "₹2,299", description: "Gold-infused radiance facial" },
+        { name: "Nature's Bridal Facial", price: "₹1,999", description: "Special bridal glow treatment" },
+        { name: "Ear Piercing", price: "₹149", description: "Professional piercing with stone" },
       ],
     },
   ];
 
   const luxuryPackages = [
     {
-      name: "Queen's Refresh",
-      price: "₹4,999",
-      originalPrice: "₹6,500",
-      badge: "Quick Luxury",
-      services: ["Haircut + Blow Dry", "Express Facial", "Manicure", "Threading"],
+      name: "Quick Refresh",
+      price: "₹999",
+      originalPrice: "₹1,500",
+      badge: "Popular Choice",
+      services: ["Haircut + Styling", "Normal Shampoo", "Basic Clean Up"],
       popular: false,
     },
     {
-      name: "Royal Glow",
-      price: "₹9,999",
-      originalPrice: "₹13,000",
+      name: "Glow & Shine",
+      price: "₹2,499",
+      originalPrice: "₹3,500",
       badge: "Most Popular",
-      services: ["Hair Spa + Styling", "Luxury Facial", "Mani + Pedi Combo", "Threading", "Complimentary Beverage"],
+      services: ["Premium Shampoo", "Lotus Clean Up", "Lotus Scrub", "O3+ D-Tan", "Complimentary Beverage"],
       popular: true,
     },
     {
-      name: "Empress Indulgence",
-      price: "₹24,999",
-      originalPrice: "₹32,000",
-      badge: "Ultimate Luxury",
-      services: ["Premium Hair Treatment", "Gold/Diamond Facial", "Luxury Mani-Pedi", "Full Body Waxing", "Head Massage", "Complimentary Champagne"],
+      name: "Ultimate Luxury",
+      price: "₹5,999",
+      originalPrice: "₹8,000",
+      badge: "Premium Package",
+      services: ["Schwarzkopf Colour", "L'Oreal X-Tenso Straightening", "O3+ Facial", "Premium Shampoo", "Complimentary Refreshments"],
       popular: false,
     },
   ];
@@ -181,9 +172,8 @@ const Home = () => {
             key={index}
             src={slide}
             alt={`The Hair Bar - Luxury Women's Salon ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              currentSlide === index ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
@@ -318,11 +308,10 @@ const Home = () => {
           {luxuryPackages.map((pkg, index) => (
             <Card
               key={index}
-              className={`relative overflow-hidden transition-all duration-300 ${
-                pkg.popular
-                  ? "border-2 border-accent shadow-gold-glow scale-105"
-                  : "border border-border hover:border-accent hover:shadow-gold-glow"
-              }`}
+              className={`relative overflow-hidden transition-all duration-300 ${pkg.popular
+                ? "border-2 border-accent shadow-gold-glow scale-105"
+                : "border border-border hover:border-accent hover:shadow-gold-glow"
+                }`}
             >
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-gradient-gold text-primary px-4 py-1 text-sm font-bold">
@@ -589,7 +578,7 @@ const Home = () => {
               </Button>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
               <h4 className="font-semibold mb-4 text-accent">Quick Links</h4>
@@ -633,7 +622,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="text-center pt-8 border-t border-border">
             <p className="text-muted-foreground mb-2">
               © 2024 The Hair Bar. All Rights Reserved.
