@@ -3,9 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
-import heroSlide1 from "@/assets/hero-slide-1.png";
-import heroSlide2 from "@/assets/hero-slide-2.png";
-import heroSlide3 from "@/assets/hero-slide-3.png";
+import heroSlide1 from "@/assets/img-1.jpg";
+import heroSlide2 from "@/assets/img-2.jpg";
+import heroSlide3 from "@/assets/img-3.jpg";
+import heroSlide4 from "@/assets/img-4.jpg";
+import heroSlide5 from "@/assets/img-5.jpg";
 import interior1 from "@/assets/salon-interior-1.jpg";
 import interior2 from "@/assets/salon-interior-2.jpg";
 import interior3 from "@/assets/salon-interior-3.jpg";
@@ -16,7 +18,7 @@ import { useState, useEffect } from "react";
 const Home = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const heroSlides = [heroSlide1, heroSlide2, heroSlide3];
+  const heroSlides = [heroSlide1, heroSlide2, heroSlide3, heroSlide4, heroSlide5];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -114,22 +116,22 @@ const Home = () => {
 
   const experts = [
     {
-      name: "Priya Sharma",
-      title: "Senior Hair Stylist",
-      specialization: "Bridal & Color Expert",
-      experience: "12+ Years",
+      name: "Sumant Barik",
+      title: "Lead Stylist",
+      specialization: "Men's Grooming & Precision Cuts",
+      experience: "3 Years",
     },
     {
-      name: "Anjali Verma",
-      title: "Makeup Artist",
-      specialization: "Bridal Makeup & HD Makeup",
-      experience: "10+ Years",
+      name: "Ajay Kumar Barik",
+      title: "Senior Stylist",
+      specialization: "Hair Styling & Treatments",
+      experience: "4 Years",
     },
     {
-      name: "Neha Patel",
-      title: "Skin Specialist",
-      specialization: "Facial & Skin Treatments",
-      experience: "8+ Years",
+      name: "Rinku Tarashia",
+      title: "Stylist",
+      specialization: "Modern Cuts & Styling",
+      experience: "2 Years",
     },
   ];
 
@@ -171,12 +173,12 @@ const Home = () => {
           <img
             key={index}
             src={slide}
-            alt={`The Hair Bar - Luxury Women's Salon ${index + 1}`}
+            alt={`The Hair Bar - Men's Grooming Salon ${index + 1}`}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"
               }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/40 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <img src={logo} alt="The Hair Bar Logo" className="w-32 h-32 mx-auto mb-6 rounded-full shadow-gold-glow" />
@@ -404,7 +406,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                onClick={() => window.open("https://wa.me/1234567890", "_blank")}
+                onClick={() => window.open("https://wa.me/918984657071", "_blank")}
                 variant="outline"
                 className="border-accent text-accent hover:bg-accent hover:text-primary"
               >
@@ -412,7 +414,7 @@ const Home = () => {
                 Quick Book via WhatsApp
               </Button>
               <Button
-                onClick={() => window.open("tel:+911234567890")}
+                onClick={() => window.open("tel:+918984657071")}
                 variant="outline"
                 className="border-accent text-accent hover:bg-accent hover:text-primary"
               >
@@ -494,12 +496,13 @@ const Home = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-accent">Location</h3>
                   <p className="text-muted-foreground">
-                    Bhubaneswar, Chandaka, Odisha
+                    1st Floor, Akash Shopping Complex<br />
+                    Chandaka, Bhubaneswar, Odisha
                   </p>
                   <Button
                     variant="link"
                     className="text-accent p-0 h-auto mt-2"
-                    onClick={() => window.open("https://share.google/pyqXwZgyj8lelf9Zg", "_blank")}
+                    onClick={() => window.open("https://maps.app.goo.gl/MqkQeG7N3SSogHTF8", "_blank")}
                   >
                     Get Directions →
                   </Button>
@@ -509,16 +512,16 @@ const Home = () => {
                 <Clock className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-accent">Opening Hours</h3>
-                  <p className="text-muted-foreground">Monday - Sunday</p>
-                  <p className="text-muted-foreground">10:00 AM - 8:00 PM</p>
+                  <p className="text-muted-foreground">Daily</p>
+                  <p className="text-muted-foreground">8:00 AM - 9:00 PM</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-accent">Phone</h3>
-                  <a href="tel:+911234567890" className="text-muted-foreground hover:text-accent transition-colors">
-                    +91 123 456 7890
+                  <a href="tel:+918984657071" className="text-muted-foreground hover:text-accent transition-colors">
+                    +91 89846 57071
                   </a>
                 </div>
               </div>
@@ -526,8 +529,8 @@ const Home = () => {
                 <Mail className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-accent">Email</h3>
-                  <a href="mailto:contact@thehairbar.com" className="text-muted-foreground hover:text-accent transition-colors">
-                    contact@thehairbar.com
+                  <a href="mailto:thehairbar16@gmail.com" className="text-muted-foreground hover:text-accent transition-colors">
+                    thehairbar16@gmail.com
                   </a>
                 </div>
               </div>
@@ -535,7 +538,7 @@ const Home = () => {
           </Card>
           <div className="rounded-lg overflow-hidden h-[400px] bg-card border border-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.8634634!2d85.8314!3d20.2961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDE3JzQ2LjAiTiA4NcKwNDknNTMuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.4926447891844!2d85.77891007516856!3d20.29582961207857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190a0f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sThe%20Hair%20Bar!5e0!3m2!1sen!2sin!4v1732966429000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -554,7 +557,7 @@ const Home = () => {
             <h3 className="text-2xl font-semibold mb-4 font-['Playfair_Display']">
               Stay <span className="luxury-text">Connected</span>
             </h3>
-            <p className="text-muted-foreground mb-6">Follow us for beauty tips, offers, and inspiration</p>
+            <p className="text-muted-foreground mb-6">Follow us for grooming tips, offers, and inspiration</p>
             <div className="flex justify-center gap-4 mb-8">
               <Button
                 onClick={() => window.open("https://www.instagram.com/the.hairbar___?igsh=ODZxaW9kaDYycWJn", "_blank")}
@@ -570,7 +573,7 @@ const Home = () => {
                 <Facebook className="w-5 h-5" />
               </Button>
               <Button
-                onClick={() => window.open("https://wa.me/1234567890", "_blank")}
+                onClick={() => window.open("https://wa.me/918984657071", "_blank")}
                 size="icon"
                 className="rounded-full bg-card hover:bg-gradient-gold hover:shadow-gold-glow transition-all duration-300"
               >
@@ -593,9 +596,9 @@ const Home = () => {
               <h4 className="font-semibold mb-4 text-accent">Services</h4>
               <ul className="space-y-2">
                 <li className="text-muted-foreground">Hair Services</li>
-                <li className="text-muted-foreground">Bridal Packages</li>
+                <li className="text-muted-foreground">Grooming Packages</li>
                 <li className="text-muted-foreground">Skin Care</li>
-                <li className="text-muted-foreground">Beauty Treatments</li>
+                <li className="text-muted-foreground">Styling Treatments</li>
               </ul>
             </div>
             <div>
@@ -628,7 +631,7 @@ const Home = () => {
               © 2024 The Hair Bar. All Rights Reserved.
             </p>
             <p className="text-sm text-accent italic">
-              Crafted with ♥ for Women
+              Crafted with ♥ for Men
             </p>
           </div>
         </div>
