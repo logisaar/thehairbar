@@ -17,22 +17,22 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Priya Singh",
+      name: "Sumant Barik",
       role: "Lead Stylist",
-      experience: "10 years experience",
-      specialty: "Color specialist & bridal styling",
-    },
-    {
-      name: "Rahul Sharma",
-      role: "Senior Stylist",
-      experience: "8 years experience",
+      experience: "3 years experience",
       specialty: "Men's grooming & precision cuts",
     },
     {
-      name: "Anjali Kapoor",
-      role: "Hair Treatment Expert",
-      experience: "7 years experience",
-      specialty: "Keratin & hair spa treatments",
+      name: "Ajay Kumar Barik",
+      role: "Senior Stylist",
+      experience: "4 years experience",
+      specialty: "Hair styling & treatments",
+    },
+    {
+      name: "Rinku Tarashia",
+      role: "Stylist",
+      experience: "2 years experience",
+      specialty: "Modern cuts & styling",
     },
   ];
 
@@ -68,7 +68,7 @@ const About = () => {
               Our Story
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Founded in 2019, The Hair Bar has become Changak's premier destination for
+              Founded in 2023, The Hair Bar has become Chandaka's premier destination for
               men's grooming and professional styling. Our journey began with a simple vision: to create
               a space where craftsmanship meets relaxation, and every client leaves feeling
               sharp and confident.
@@ -158,8 +158,8 @@ const About = () => {
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Address</h3>
                 <p className="text-sm text-muted-foreground">
-                  Shop No. 12, Main Street<br />
-                  Changak, Punjab - 144409
+                  1st Floor, Akash Shopping Complex<br />
+                  Chandaka, Bhubaneswar
                 </p>
               </div>
             </div>
@@ -168,7 +168,7 @@ const About = () => {
               <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                <p className="text-sm text-muted-foreground">+91 89846 57071</p>
               </div>
             </div>
 
@@ -176,7 +176,7 @@ const About = () => {
               <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                <p className="text-sm text-muted-foreground">info@thehairbar.com</p>
+                <p className="text-sm text-muted-foreground">thehairbar16@gmail.com</p>
               </div>
             </div>
 
@@ -185,8 +185,8 @@ const About = () => {
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Hours</h3>
                 <p className="text-sm text-muted-foreground">
-                  Monday - Sunday<br />
-                  9:00 AM - 8:00 PM
+                  Daily<br />
+                  8:00 AM - 9:00 PM
                 </p>
               </div>
             </div>
@@ -197,7 +197,7 @@ const About = () => {
         <Card className="shadow-soft overflow-hidden animate-slide-up">
           <CardContent className="p-0">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.234!2d75.567!3d31.345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDIwJzQyLjAiTiA3NcKwMzQnMDEuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.4926447891844!2d85.77891007516856!3d20.29582961207857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190a0f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sThe%20Hair%20Bar!5e0!3m2!1sen!2sin!4v1732966429000!5m2!1sen!2sin"
               width="100%"
               height="250"
               style={{ border: 0 }}
@@ -274,7 +274,7 @@ const About = () => {
             <Button
               variant="outline"
               className="bg-white text-primary hover:bg-white/90"
-              onClick={() => window.open("https://wa.me/919876543210", "_blank")}
+              onClick={() => window.open("https://wa.me/918984657071", "_blank")}
             >
               Chat on WhatsApp
             </Button>

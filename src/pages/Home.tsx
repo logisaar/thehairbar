@@ -484,7 +484,7 @@ const Home = () => {
       {/* Location & Contact */}
       <section className="py-16 px-6 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 font-['Playfair_Display']">
-          Visit Our <span className="luxury-text">Sanctuary</span>
+          Visit Our <span className="luxury-text">Bar</span>
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="bg-card border-border">
@@ -494,12 +494,12 @@ const Home = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2 text-accent">Location</h3>
                   <p className="text-muted-foreground">
-                    Bhubaneswar, Chandak, Odisha
+                    Bhubaneswar, Chandaka, Odisha
                   </p>
                   <Button
                     variant="link"
                     className="text-accent p-0 h-auto mt-2"
-                    onClick={() => window.open("https://maps.google.com", "_blank")}
+                    onClick={() => window.open("https://share.google/pyqXwZgyj8lelf9Zg", "_blank")}
                   >
                     Get Directions →
                   </Button>
