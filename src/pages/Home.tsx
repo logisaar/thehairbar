@@ -131,7 +131,7 @@ const Home = () => {
       name: "Rinku Tarashia",
       title: "Stylist",
       specialization: "Modern Cuts & Styling",
-      experience: "2 Years",
+      experience: "5 Years",
     },
   ];
 
