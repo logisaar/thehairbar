@@ -17,12 +17,20 @@ const Layout = ({ children }: LayoutProps) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        checkAdminRole(session.user.id);
+    const initAuth = async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        setUser(session?.user ?? null);
+        if (session?.user) {
+          checkAdminRole(session.user.id);
+        }
+      } catch (error) {
+        console.error("Auth initialization error:", error);
+        setUser(null);
       }
-    });
+    };
+
+    initAuth();
 
     const {
       data: { subscription },
@@ -98,7 +106,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </div>
-      
+
       <main className="animate-fade-in bg-gradient-subtle">{children}</main>
 
       {/* Bottom Navigation */}
@@ -108,7 +116,7 @@ const Layout = ({ children }: LayoutProps) => {
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
-              
+
               return (
                 <Link
                   key={item.path}
