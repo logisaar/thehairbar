@@ -27,24 +27,59 @@ const Booking = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [showPayment, setShowPayment] = useState(false);
-  const navigate = useNavigate();
+  const [servicesList, setServicesList] = useState<any[]>([]);
+  const [bookedTables, setBookedTables] = useState<number[]>([]);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
+      if (session?.user) {
+        setEmail(session.user.email || "");
+      }
     });
+
+    fetchServices();
   }, []);
 
-  const services = [
-    "Classic Haircut - ₹500",
-    "Premium Haircut - ₹750",
-    "Full Hair Color - ₹2,500",
-    "Highlights - ₹1,800",
-    "Hair Spa Deluxe - ₹1,200",
-    "Keratin Treatment - ₹4,500",
-    "Blow Dry & Style - ₹400",
-    "Special Occasion Styling - ₹1,000",
-  ];
+  useEffect(() => {
+    if (date && selectedTime) {
+      fetchBookedTables();
+    } else {
+      setBookedTables([]);
+    }
+  }, [date, selectedTime]);
+
+  const fetchServices = async () => {
+    const { data } = await supabase.from("services").select("name, price");
+    setServicesList(data || []);
+  };
+
+  const fetchBookedTables = async () => {
+    if (!date || !selectedTime) return;
+
+    const formattedDate = date.toISOString().split('T')[0];
+    const { data, error } = await supabase
+      .from("bookings")
+      .select("table_number")
+      .eq("booking_date", formattedDate)
+      .eq("booking_time", selectedTime)
+      .neq("status", "cancelled")
+      .neq("status", "rejected"); // Ensure we check for non-cancelled bookings
+
+    if (error) {
+      console.error("Error fetching available tables:", error);
+      return;
+    }
+
+    const booked = data.map((b: any) => b.table_number);
+    setBookedTables(booked);
+
+    // If currently selected table is now booked, deselect it
+    if (selectedTable && booked.includes(parseInt(selectedTable))) {
+      setSelectedTable("");
+      toast.error("The selected table is no longer available for this time.");
+    }
+  };
 
   const timeSlots = [
     "09:00 AM",
@@ -60,11 +95,11 @@ const Booking = () => {
     "07:00 PM",
   ];
 
-  const tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const tables = [1, 2, 3, 4, 5];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!date || !selectedService || !selectedTime || !selectedTable || !name || !phone) {
       toast.error("Please fill in all required fields");
       return;
@@ -74,10 +109,32 @@ const Booking = () => {
   };
 
   const handlePayment = async () => {
-    // Simulate successful payment
-    setIsSubmitted(true);
-    setShowPayment(false);
-    toast.success("Payment successful! Booking confirmed.");
+    try {
+      // Create booking in database
+      const { error } = await supabase.from("bookings").insert([
+        {
+          user_id: user?.id,
+          service: selectedService,
+          booking_date: date?.toISOString().split('T')[0],
+          booking_time: selectedTime,
+          table_number: parseInt(selectedTable),
+          customer_name: name,
+          customer_phone: phone,
+          customer_email: email,
+          status: 'confirmed', // Assuming auto-confirmed for now
+          payment_status: 'paid', // Demo payment
+        }
+      ]);
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      setShowPayment(false);
+      toast.success("Payment successful! Booking confirmed.");
+    } catch (error) {
+      console.error("Booking error:", error);
+      toast.error("Failed to create booking. Please try again.");
+    }
   };
 
   if (isSubmitted) {
@@ -101,7 +158,13 @@ const Booking = () => {
               We look forward to seeing you at The Hair Bar!
             </p>
             <Button
-              onClick={() => setIsSubmitted(false)}
+              onClick={() => {
+                setIsSubmitted(false);
+                setDate(undefined);
+                setSelectedService("");
+                setSelectedTime("");
+                setSelectedTable("");
+              }}
               className="bg-gradient-gold text-primary hover:shadow-gold-glow transition-all duration-300"
             >
               Book Another Appointment
@@ -139,11 +202,19 @@ const Booking = () => {
                   <SelectValue placeholder="Choose a service" />
                 </SelectTrigger>
                 <SelectContent>
-                  {services.map((service) => (
-                    <SelectItem key={service} value={service}>
-                      {service}
-                    </SelectItem>
-                  ))}
+                  {servicesList.length > 0 ? (
+                    servicesList.map((service) => (
+                      <SelectItem key={service.name} value={service.name}>
+                        {service.name} - {service.price}
+                      </SelectItem>
+                    ))
+                  ) : (
+                    // Fallback if no services loaded yet or DB empty
+                    <>
+                      <SelectItem value="Haircut">Classic Haircut - ₹500</SelectItem>
+                      <SelectItem value="Shaving">Shaving - ₹200</SelectItem>
+                    </>
+                  )}
                 </SelectContent>
               </Select>
             </CardContent>
@@ -172,21 +243,27 @@ const Booking = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-5 gap-2">
-                {tables.map((table) => (
-                  <Button
-                    key={table}
-                    type="button"
-                    variant={selectedTable === table.toString() ? "default" : "outline"}
-                    className={
-                      selectedTable === table.toString()
-                        ? "bg-gradient-gold text-primary hover:opacity-90"
-                        : "border-accent text-accent hover:bg-accent hover:text-primary"
-                    }
-                    onClick={() => setSelectedTable(table.toString())}
-                  >
-                    {table}
-                  </Button>
-                ))}
+                {tables.map((table) => {
+                  const isBooked = bookedTables.includes(table);
+                  return (
+                    <Button
+                      key={table}
+                      type="button"
+                      disabled={isBooked}
+                      variant={selectedTable === table.toString() ? "default" : "outline"}
+                      className={
+                        isBooked
+                          ? "bg-muted text-muted-foreground opacity-50 cursor-not-allowed"
+                          : selectedTable === table.toString()
+                            ? "bg-gradient-gold text-primary hover:opacity-90"
+                            : "border-accent text-accent hover:bg-accent hover:text-primary"
+                      }
+                      onClick={() => !isBooked && setSelectedTable(table.toString())}
+                    >
+                      {table}
+                    </Button>
+                  );
+                })}
               </div>
             </CardContent>
           </Card>

@@ -197,7 +197,7 @@ const About = () => {
         <Card className="shadow-soft overflow-hidden animate-slide-up">
           <CardContent className="p-0">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.4926447891844!2d85.77891007516856!3d20.29582961207857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190a0f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sThe%20Hair%20Bar!5e0!3m2!1sen!2sin!4v1732966429000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d59846.04954075553!2d85.6926633!3d20.3672948!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1907003b748f3f%3A0x77c1c61baa096c9e!2sTHE%20HAIR%20BAR!5e0!3m2!1sen!2sin!4v1765296464001!5m2!1sen!2sin"
               width="100%"
               height="250"
               style={{ border: 0 }}

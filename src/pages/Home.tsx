@@ -199,7 +199,7 @@ const Home = () => {
               className="bg-gradient-gold text-primary hover:shadow-gold-glow transition-all duration-300 text-lg px-8 py-6"
             >
               <Crown className="w-5 h-5 mr-2" />
-              Book Your Throne
+              Book Your Chair
             </Button>
             <Button
               onClick={() => navigate("/services")}
@@ -280,7 +280,7 @@ const Home = () => {
                         <h4 className="text-lg font-semibold group-hover:text-accent transition-colors">
                           {service.name}
                         </h4>
-                        <span className="text-accent font-bold text-lg">{service.price}</span>
+                        <span className="text-accent font-bold text-xl drop-shadow-sm">{service.price}</span>
                       </div>
                       <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
                       <Button
@@ -339,7 +339,7 @@ const Home = () => {
                   onClick={scrollToBooking}
                   className="w-full bg-gradient-gold text-primary hover:shadow-gold-glow transition-all duration-300"
                 >
-                  Reserve Your Throne
+                  Reserve Your Chair
                 </Button>
               </CardContent>
             </Card>
@@ -385,7 +385,7 @@ const Home = () => {
       <section id="booking-section" className="py-16 px-6 max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 font-['Playfair_Display']">
-            Reserve Your <span className="luxury-text">Throne</span>
+            Reserve Your <span className="luxury-text">Chair</span>
           </h2>
           <p className="text-muted-foreground text-lg">Book your luxury experience in seconds</p>
         </div>
@@ -502,7 +502,7 @@ const Home = () => {
                   <Button
                     variant="link"
                     className="text-accent p-0 h-auto mt-2"
-                    onClick={() => window.open("https://maps.app.goo.gl/MqkQeG7N3SSogHTF8", "_blank")}
+                    onClick={() => window.open("https://maps.app.goo.gl/bkm2WiimhNTDrHZ1A", "_blank")}
                   >
                     Get Directions →
                   </Button>
@@ -538,7 +538,7 @@ const Home = () => {
           </Card>
           <div className="rounded-lg overflow-hidden h-[400px] bg-card border border-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.4926447891844!2d85.77891007516856!3d20.29582961207857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190a0f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sThe%20Hair%20Bar!5e0!3m2!1sen!2sin!4v1732966429000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d59846.04954075553!2d85.6926633!3d20.3672948!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1907003b748f3f%3A0x77c1c61baa096c9e!2sTHE%20HAIR%20BAR!5e0!3m2!1sen!2sin!4v1765296464001!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
